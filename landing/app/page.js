@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { PROJECTS } from "./data/projects";
 
-const CATEGORIES = ["All", "Branding", "AI", "Product Design", "Web Design", "UGC", "Web3"];
+const CATEGORIES = ["All", "AI", "Web3", "Product Design", "Web Design", "Branding", "Creative Dev", "WebGL"];
 
 export default function CasesArchive() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -140,7 +140,7 @@ export default function CasesArchive() {
                   </span>
                 </div>
                 <p className="text-sm opacity-40 leading-relaxed font-medium">
-                  Exploring the intersection of high-fidelity design and technical excellence. This study dives deep into the architectural choices and user experience patterns developed for {selectedProject.title}.
+                  {selectedProject.description || `Exploring the intersection of high-fidelity design and technical excellence. This study dives deep into the architectural choices and user experience patterns developed for ${selectedProject.title}.`}
                 </p>
               </div>
               
