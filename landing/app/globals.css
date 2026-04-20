@@ -116,7 +116,8 @@
 
 /* Eye Satisfying Pulse Animation */
 .case-external-link {
-    @apply absolute top-6 right-6 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center opacity-0 translate-y-4 transition-all duration-500 z-20 shadow-2xl;
+    @apply absolute top-6 right-6 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center opacity-0 translate-y-4 transition-all duration-500 z-20 border border-black/10;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25), 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .case-card:hover .case-external-link {
@@ -125,13 +126,13 @@
 }
 
 @keyframes sonarPulse {
-    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-    70% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4), 0 15px 35px rgba(0,0,0,0.25); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0), 0 15px 35px rgba(0,0,0,0.25); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), 0 15px 35px rgba(0,0,0,0.25); }
 }
 
 .case-overlay {
-    @apply absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-700;
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/10 opacity-0 transition-opacity duration-700;
 }
 
 .case-card:hover .case-overlay {
