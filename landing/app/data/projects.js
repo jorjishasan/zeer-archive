@@ -121,4 +121,14 @@ export const PROJECTS = [
     url: "https://asmepage-zeer.netlify.app/",
     description: "Specialized LLM interface designed for mindful technical documentation and research."
   },
+  {
+    id: 13,
+    slug: "duolingo",
+    title: "Duolingo Landing",
+    tag: "Web Design",
+    index: "13",
+    asset: "/landing_assets/duolingo.gif",
+    url: "https://duolingouk-zeer.netlify.app/",
+    description: "A playful and engaging education landing page inspired by Duolingo's iconic design."
+  },
 ];
