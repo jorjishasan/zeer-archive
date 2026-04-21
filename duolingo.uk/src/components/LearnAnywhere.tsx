@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import HlsPlayer from './HlsPlayer';
+import VideoPlayer from './VideoPlayer';
 
 const LearnAnywhere: React.FC = () => {
   return (
@@ -30,8 +30,8 @@ const LearnAnywhere: React.FC = () => {
           zIndex: 0,
           backgroundColor: '#ddf0fa'
         }}>
-          <HlsPlayer 
-            src="https://stream.mux.com/6xLBelbJrZGw00K2jPsZtGm8pkftvfezQ8rdAmHL9HoM.m3u8" 
+          <VideoPlayer 
+            src="/hero_bg_2.mp4" 
             className="w-full h-full object-cover" 
           />
         </div>

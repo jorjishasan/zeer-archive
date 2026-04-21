@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import HlsPlayer from './HlsPlayer';
+import VideoPlayer from './VideoPlayer';
 
 export const SuperDuolingo: React.FC = () => {
   return (
@@ -26,7 +26,7 @@ export const SuperDuolingo: React.FC = () => {
           overflow: 'hidden'
         }}
       >
-        <HlsPlayer src="https://stream.mux.com/JYOLW4tkLJJL4hOKcazRgJqjaV00AfQvh2Nca701vxUao.m3u8" className="w-full h-full object-contain" />
+        <VideoPlayer src="/hero_bg_3.mp4" className="w-full h-full object-contain" />
       </motion.div>
       <motion.div 
         initial={{ opacity: 0, x: 50 }}
@@ -111,7 +111,7 @@ export const CTA: React.FC = () => {
           </motion.a>
         </motion.div>
         <div className="cta-bottom-video" style={{ width: '100vw', backgroundColor: 'var(--white)' }}>
-          <HlsPlayer src="https://stream.mux.com/1RSKj01UjpjdbxtOEtuQ01t1O00fqI5QQbn7mTW7UiTBy8.m3u8" className="w-full h-auto" />
+          <VideoPlayer src="/hero_bg_5.mp4" className="w-full h-full object-contain" />
         </div>
       </div>
       <div className="cta-side desktop-only" style={{ flex: 1, height: '400px', backgroundColor: 'var(--green)' }} />

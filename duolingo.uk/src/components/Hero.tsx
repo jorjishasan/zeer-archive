@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import HlsPlayer from './HlsPlayer';
+import VideoPlayer from './VideoPlayer';
 
 const Hero: React.FC = () => {
   return (
@@ -29,10 +29,11 @@ const Hero: React.FC = () => {
           overflow: 'hidden'
         }}
       >
-        <HlsPlayer 
-          src="https://stream.mux.com/ze00dOwsh5muXXj01EWSfdilcHjcGqlznBuFR5GEYlZe00.m3u8"
+        <VideoPlayer 
+          src="/hero_bg_0.mp4"
           className="w-full h-full object-contain"
         />
+
       </motion.div>
 
       <motion.div 

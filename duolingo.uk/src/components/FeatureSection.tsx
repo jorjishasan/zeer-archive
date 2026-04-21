@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import HlsPlayer from './HlsPlayer';
+import VideoPlayer from './VideoPlayer';
 
 interface FeatureSectionProps {
   title: string;
@@ -64,7 +64,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
           overflow: 'hidden'
         }}
       >
-        <HlsPlayer src={videoSrc} className="w-full h-full object-contain" />
+        <VideoPlayer src={videoSrc} className="w-full h-full object-contain" />
       </motion.div>
     </section>
   );
