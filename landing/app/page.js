@@ -142,17 +142,6 @@ export default function CasesArchive() {
                 className="group flex flex-col border-r border-b border-white/5 hover:bg-white/[0.02] transition-colors duration-1000 cursor-pointer overflow-hidden p-8 gap-8"
               >
                 <div className="overflow-hidden aspect-[16/9] bg-white/[0.02] relative">
-                  <AnimatePresence>
-                    {!loadedAssets.has(project.asset) && (
-                      <motion.div 
-                        initial={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="absolute inset-0 flex items-center justify-center bg-[#0a0a0a] z-10"
-                      >
-                         <div className="w-4 h-4 border border-white/5 border-t-white/30 rounded-full animate-[spin_0.6s_linear_infinite]" />
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                   <img 
                     src={project.asset} 
                     alt={project.title} 
@@ -160,7 +149,11 @@ export default function CasesArchive() {
                     // @ts-ignore
                     fetchpriority={project.id <= 4 ? "high" : "auto"}
                     onLoad={() => setLoadedAssets(prev => new Set(prev).add(project.asset))}
-                    className={`w-full h-full object-cover object-top transition-all duration-1000 ${loadedAssets.has(project.asset) ? 'opacity-70 group-hover:opacity-100 group-hover:scale-110' : 'opacity-0'}`} 
+                    className={`w-full h-full object-cover object-top transition-all duration-[1500ms] ease-out ${
+                      loadedAssets.has(project.asset) 
+                        ? 'opacity-70 blur-0 scale-100 group-hover:opacity-100 group-hover:scale-110' 
+                        : 'opacity-20 blur-2xl scale-105'
+                    }`} 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                 </div>
