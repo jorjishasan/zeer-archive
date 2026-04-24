@@ -4,13 +4,14 @@ import { useState, useEffect } from "react";
 import { PROJECTS } from "./data/projects";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "motion/react";
 
-const CATEGORIES = ["All", "AI", "Web3", "Product Design", "Web Design", "Branding", "Creative Dev", "WebGL"];
+const CATEGORIES = ["All", "AI", "Web3", "Product Design", "Web Design", "Branding", "WebGL", "Research"];
 
 export default function CasesArchive() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [filteredProjects, setFilteredProjects] = useState(PROJECTS);
   const [selectedId, setSelectedId] = useState(null);
   const [loadedIds, setLoadedIds] = useState(new Set());
+  const [loadedAssets, setLoadedAssets] = useState(new Set());
   
   // Magnetic Fluid Cursor Logic
   const mouseX = useMotionValue(0);
@@ -40,6 +41,31 @@ export default function CasesArchive() {
   useEffect(() => {
     setFilteredProjects(activeCategory === "All" ? PROJECTS : PROJECTS.filter(p => p.tag === activeCategory));
   }, [activeCategory]);
+
+  // Background Preloading System
+  useEffect(() => {
+    const handleLoad = (asset) => {
+      setLoadedAssets(prev => new Set(prev).add(asset));
+    };
+
+    // 1. Preload first row (top priority)
+    PROJECTS.slice(0, 4).forEach(p => {
+      const img = new Image();
+      img.src = p.asset;
+      img.onload = () => handleLoad(p.asset);
+    });
+
+    // 2. Preload remaining assets after initial mount
+    const timer = setTimeout(() => {
+      PROJECTS.slice(4).forEach(p => {
+        const img = new Image();
+        img.src = p.asset;
+        img.onload = () => handleLoad(p.asset);
+      });
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const warmUp = (id) => {
     if (!loadedIds.has(id)) {
@@ -115,11 +141,26 @@ export default function CasesArchive() {
                 onMouseEnter={() => warmUp(project.id)}
                 className="group flex flex-col border-r border-b border-white/5 hover:bg-white/[0.02] transition-colors duration-1000 cursor-pointer overflow-hidden p-8 gap-8"
               >
-                <div className="overflow-hidden aspect-[16/9] bg-black/40 relative">
+                <div className="overflow-hidden aspect-[16/9] bg-white/[0.02] relative">
+                  <AnimatePresence>
+                    {!loadedAssets.has(project.asset) && (
+                      <motion.div 
+                        initial={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="absolute inset-0 flex items-center justify-center bg-[#0a0a0a] z-10"
+                      >
+                         <div className="w-4 h-4 border border-white/5 border-t-white/30 rounded-full animate-[spin_0.6s_linear_infinite]" />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                   <img 
                     src={project.asset} 
                     alt={project.title} 
-                    className="w-full h-full object-cover object-top opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000" 
+                    loading={project.id <= 4 ? "eager" : "lazy"}
+                    // @ts-ignore
+                    fetchpriority={project.id <= 4 ? "high" : "auto"}
+                    onLoad={() => setLoadedAssets(prev => new Set(prev).add(project.asset))}
+                    className={`w-full h-full object-cover object-top transition-all duration-1000 ${loadedAssets.has(project.asset) ? 'opacity-70 group-hover:opacity-100 group-hover:scale-110' : 'opacity-0'}`} 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                 </div>

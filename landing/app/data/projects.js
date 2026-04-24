@@ -25,7 +25,7 @@ export const PROJECTS = [
     slug: "prisma",
     title: "Prisma Lab",
     tag: "AI",
-    index: "08",
+    index: "03",
     asset: "/landing_assets/prisma.gif",
     url: "https://prismalab-zeer.netlify.app/",
     description: "Advanced research laboratory for computer vision and generative AI models."
@@ -43,90 +43,101 @@ export const PROJECTS = [
 
   {
     id: 5,
+    slug: "cosmogenetics",
+    title: "Cosmogenetics",
+    tag: "Research",
+    index: "05",
+    asset: "/landing_assets/cosmogenetics.gif",
+    url: "https://cosmogenetics-zeer.netlify.app/",
+    description: "Institutional-grade genomic research portal featuring advanced data visualization and surgical UX design."
+  },
+
+  {
+    id: 6,
     slug: "sequa",
     title: "Sequa Capital",
     tag: "Branding",
-    index: "05",
+    index: "06",
     asset: "/landing_assets/sequa.gif",
     url: "https://sequacapital-zeer.netlify.app/",
     description: "Institutional-grade venture capital branding and portfolio showcase."
   },
   {
-    id: 6,
+    id: 7,
     slug: "neuralyn",
     title: "Neuralyn Land",
     tag: "Web Design",
-    index: "06",
+    index: "07",
     asset: "/landing_assets/neuralyn.gif",
     url: "https://neuralyn-zeer.netlify.app/",
     description: "Interactive networking visualization and decentralized infrastructure portal."
   },
   {
-    id: 7,
+    id: 8,
     slug: "mind-loop",
     title: "Mind Loop",
     tag: "Product Design",
-    index: "07",
+    index: "08",
     asset: "/landing_assets/mind.gif",
     url: "https://mindlooop-zeer.netlify.app/",
     description: "Cognitive focus and productivity tool with a sleek, minimalist aesthetic."
   },
   {
-    id: 8,
+    id: 9,
     slug: "sentinel",
     title: "Sentinel AI",
     tag: "AI",
-    index: "03",
+    index: "09",
     asset: "/landing_assets/sentinel.gif",
     url: "https://sentinelai-zeer.netlify.app/",
     description: "High-performance intelligence dashboard featuring laboratory-grade aesthetics and data visualizations."
   },
   {
-    id: 9,
+    id: 10,
     slug: "logoipsum-ai",
     title: "Logoipsum AI",
     tag: "AI",
-    index: "09",
+    index: "10",
     asset: "/landing_assets/logoipsum.gif",
     url: "https://logoipsum-ai-zeer.netlify.app/",
     description: "Automated branding and identity generation powered by neural networks."
   },
   {
-    id: 10,
+    id: 11,
     slug: "gsap-portfolio",
     title: "GSAP Portfolio",
-    tag: "Creative Dev",
-    index: "10",
+    tag: "Web Design",
+    index: "11",
     asset: "/landing_assets/gsap.gif",
     url: "https://gsap-portfolio-jorjis.netlify.app/",
     description: "Interactive development portfolio showcasing advanced GSAP animations and scroll-triggered effects."
   },
   {
-    id: 11,
+    id: 12,
     slug: "yacht-club",
     title: "Yacht Club",
     tag: "WebGL",
-    index: "11",
+    index: "12",
     asset: "/landing_assets/yacht.gif",
     url: "https://yachtclub-zeer.netlify.app/",
     description: "Ultra-premium luxury yacht experience featuring immersive 3D WebGL environments."
   },
   {
-    id: 12,
+    id: 13,
     slug: "asme",
     title: "ASME Page",
     tag: "AI",
-    index: "12",
+    index: "13",
     asset: "/landing_assets/asme.gif",
     url: "https://asmepage-zeer.netlify.app/",
     description: "Specialized LLM interface designed for mindful technical documentation and research."
   },
   {
-    id: 13,
+    id: 14,
     slug: "duolingo",
     title: "Duolingo Landing",
     tag: "Web Design",
-    index: "13",
+    index: "14",
     asset: "/landing_assets/duolingo.gif",
     url: "https://duolingouk-zeer.netlify.app/",
     description: "A playful and engaging education landing page inspired by Duolingo's iconic design."
