@@ -44,7 +44,7 @@ export const PROJECTS = [
   {
     id: 5,
     slug: "cosmogenetics",
-    title: "Cosmogenetics",
+    title: "Cosmo Genetics",
     tag: "Research",
     index: "05",
     asset: "/landing_assets/cosmogenetics.gif",
