@@ -42,29 +42,39 @@ export default function CasesArchive() {
     setFilteredProjects(activeCategory === "All" ? PROJECTS : PROJECTS.filter(p => p.tag === activeCategory));
   }, [activeCategory]);
 
-  // Background Preloading System
+  // Surgical Sequential Background Loader
   useEffect(() => {
-    const handleLoad = (asset) => {
-      setLoadedAssets(prev => new Set(prev).add(asset));
+    let isMounted = true;
+
+    const loadSequentially = async () => {
+      // Small delay to ensure browser finishes initial page load & stops spinner
+      await new Promise(resolve => setTimeout(resolve, 2500));
+      
+      for (const project of PROJECTS) {
+        if (!isMounted) break;
+        
+        // Skip if already loaded (e.g. if user hovered/clicked)
+        if (loadedAssets.has(project.asset)) continue;
+
+        await new Promise((resolve) => {
+          const img = new Image();
+          img.src = project.asset;
+          img.onload = () => {
+            if (isMounted) {
+              setLoadedAssets(prev => new Set(prev).add(project.asset));
+            }
+            resolve();
+          };
+          img.onerror = resolve; // Continue even if one fails
+        });
+        
+        // Tiny gap between requests to keep the main thread fluid
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
     };
 
-    // 1. Preload first row (top priority)
-    PROJECTS.slice(0, 4).forEach(p => {
-      const img = new Image();
-      img.src = p.asset;
-      img.onload = () => handleLoad(p.asset);
-    });
-
-    // 2. Preload remaining assets after initial mount
-    const timer = setTimeout(() => {
-      PROJECTS.slice(4).forEach(p => {
-        const img = new Image();
-        img.src = p.asset;
-        img.onload = () => handleLoad(p.asset);
-      });
-    }, 1500);
-
-    return () => clearTimeout(timer);
+    loadSequentially();
+    return () => { isMounted = false; };
   }, []);
 
   const warmUp = (id) => {
