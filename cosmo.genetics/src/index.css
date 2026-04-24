@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Syne", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-obsidian: #050505;
+  --color-crimson: #ff3b3b;
+  --color-bone: #F5F5F7;
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian text-bone antialiased selection:bg-crimson selection:text-white;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+  }
+}
+
+.noise-bg::before {
+  content: "";
+  @apply fixed inset-0 z-[1] pointer-events-none opacity-[0.03];
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.sticky-header {
+  @apply fixed top-0 left-0 w-full z-[100] transition-all duration-700 ease-[0.16,1,0.3,1] px-12 py-10;
+}
+
+.sticky-header-scrolled {
+  @apply py-6 bg-obsidian/40 backdrop-blur-xl border-b border-white/5;
+}
+
+.mask-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Minimalist Button */
+.btn-minimal {
+  @apply relative px-8 py-3 font-mono text-[10px] tracking-[0.4em] uppercase border border-white/10 hover:border-crimson transition-all duration-500 overflow-hidden rounded-full;
+}
+
+.btn-minimal::after {
+  content: "";
+  @apply absolute inset-0 bg-crimson translate-y-full transition-transform duration-500 ease-[0.16,1,0.3,1];
+}
+
+.btn-minimal:hover::after {
+  @apply translate-y-0;
+}
+
+.btn-minimal span {
+  @apply relative z-10 transition-colors duration-500;
+}
+
+.btn-minimal:hover span {
+  @apply text-white;
+}
