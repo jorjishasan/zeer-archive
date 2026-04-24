@@ -30,18 +30,18 @@ const LearnAnywhere: React.FC = () => {
           zIndex: 0,
           backgroundColor: '#ddf0fa'
         }}>
-          <VideoPlayer 
-            src="/hero_bg_2.mp4" 
-            className="w-full h-full object-cover" 
+          <VideoPlayer
+            src="/hero_bg_2.mp4"
+            className="w-full h-full object-cover"
           />
         </div>
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="learn-anywhere-content" 
+          className="learn-anywhere-content"
           style={{
             position: 'relative',
             zIndex: 1,
@@ -55,14 +55,14 @@ const LearnAnywhere: React.FC = () => {
             marginBottom: '48px',
             lineHeight: 1.15
           }}>learn anytime,<br />anywhere</h2>
-          
+
           <div className="store-btns" style={{
             display: 'flex',
             gap: '16px',
             justifyContent: 'center'
           }}>
-            <motion.a 
-              href="#" 
+            <motion.a
+              href="#"
               whileHover={{ scale: 1.05, backgroundColor: '#f0f0f0' }}
               whileTap={{ scale: 0.95 }}
               className="store-btn"
@@ -85,9 +85,9 @@ const LearnAnywhere: React.FC = () => {
                 <span style={{ fontSize: '16px', fontWeight: 700, color: 'var(--gray-text)', display: 'block' }}>App Store</span>
               </div>
             </motion.a>
-            
-            <motion.a 
-              href="#" 
+
+            <motion.a
+              href="#"
               whileHover={{ scale: 1.05, backgroundColor: '#f0f0f0' }}
               whileTap={{ scale: 0.95 }}
               className="store-btn"

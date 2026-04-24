@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -70 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', damping: 20, stiffness: 100 }}
@@ -30,13 +30,13 @@ const Navbar: React.FC = () => {
         padding: '0 24px'
       }}>
         <a href="https://duolingo.com" className="logo">
-          <img 
-            src="https://d35aaqx5ub95lt.cloudfront.net/images/splash/f92d5f2f7d56636846861c458c0d0b6c.svg" 
-            alt="Duolingo" 
+          <img
+            src="https://d35aaqx5ub95lt.cloudfront.net/images/splash/f92d5f2f7d56636846861c458c0d0b6c.svg"
+            alt="Duolingo"
             style={{ width: '179px', height: '42px' }}
           />
         </a>
-        <motion.button 
+        <motion.button
           whileHover={{ backgroundColor: 'rgba(0,0,0,0.05)' }}
           className="lang-selector"
           style={{
@@ -52,10 +52,10 @@ const Navbar: React.FC = () => {
           }}
         >
           <span className="desktop-only" style={{ display: 'inline' }}>Site language: English</span>
-          <img 
-            src="https://d35aaqx5ub95lt.cloudfront.net/images/splash/c6eae48dd48246c89e415b89f9e55282.svg" 
-            width="14" 
-            height="14" 
+          <img
+            src="https://d35aaqx5ub95lt.cloudfront.net/images/splash/c6eae48dd48246c89e415b89f9e55282.svg"
+            width="14"
+            height="14"
             alt="arrow"
           />
         </motion.button>
@@ -63,5 +63,6 @@ const Navbar: React.FC = () => {
     </motion.nav>
   );
 };
+
 
 export default Navbar;

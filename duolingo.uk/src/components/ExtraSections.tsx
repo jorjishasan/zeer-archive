@@ -12,7 +12,7 @@ export const SuperDuolingo: React.FC = () => {
       justifyContent: 'center',
       gap: '40px'
     }}>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
@@ -28,7 +28,7 @@ export const SuperDuolingo: React.FC = () => {
       >
         <VideoPlayer src="/hero_bg_3.mp4" className="w-full h-full object-contain" />
       </motion.div>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -38,13 +38,13 @@ export const SuperDuolingo: React.FC = () => {
       >
         <picture>
           <source srcSet="https://d35aaqx5ub95lt.cloudfront.net/images/splash/3a733db6d6873e1a915f70cf72554ce3.svg" type="image/svg+xml" />
-          <img 
-            src="https://d35aaqx5ub95lt.cloudfront.net/images/splash/dd7453522d3192d4df06d4652508b8bc.svg" 
-            alt="Super Duolingo" 
+          <img
+            src="https://d35aaqx5ub95lt.cloudfront.net/images/splash/dd7453522d3192d4df06d4652508b8bc.svg"
+            alt="Super Duolingo"
             style={{ width: '100%', maxWidth: '605px', marginBottom: '48px' }}
           />
         </picture>
-        <motion.button 
+        <motion.button
           whileHover={{ scale: 1.05, backgroundColor: '#c8f040' }}
           whileTap={{ scale: 0.95, y: 4 }}
           className="btn"
@@ -80,12 +80,12 @@ export const CTA: React.FC = () => {
         alignItems: 'center',
         textAlign: 'center'
       }}>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="cta-top" 
+          className="cta-top"
           style={{
             padding: '40px 0',
             display: 'flex',
@@ -100,11 +100,11 @@ export const CTA: React.FC = () => {
             maxWidth: '800px',
             lineHeight: 1.1
           }}>learn a language with duolingo</h1>
-          <motion.a 
+          <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95, y: 4 }}
-            href="/register" 
-            className="btn btn-primary" 
+            href="/register"
+            className="btn btn-primary"
             style={{ width: 'auto', padding: '0 32px', marginBottom: '8px', textDecoration: 'none' }}
           >
             Get started

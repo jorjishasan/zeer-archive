@@ -11,8 +11,8 @@ interface FeatureSectionProps {
   reversed?: boolean;
 }
 
-const FeatureSection: React.FC<FeatureSectionProps> = ({ 
-  title, description, linkText, linkHref, videoSrc, reversed 
+const FeatureSection: React.FC<FeatureSectionProps> = ({
+  title, description, linkText, linkHref, videoSrc, reversed
 }) => {
   return (
     <section className={`section-content ${reversed ? 'section-reversed' : ''}`} style={{
@@ -25,7 +25,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
       margin: '0 auto',
       flexDirection: reversed ? 'row-reverse' : 'row'
     }}>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: reversed ? 50 : -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -50,7 +50,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
           )}
         </p>
       </motion.div>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.9, x: reversed ? -50 : 50 }}
         whileInView={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}

@@ -37,16 +37,16 @@ const LanguageNav: React.FC = () => {
           <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M9 3L5 7L9 11' stroke='%23afafaf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="left" />
         </button>
 
-        <div 
+        <div
           ref={scrollRef}
-          className="lang-list-container" 
+          className="lang-list-container"
           style={{
             overflowX: 'auto',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none'
           }}
         >
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -59,7 +59,7 @@ const LanguageNav: React.FC = () => {
                 }
               }
             }}
-            className="lang-list" 
+            className="lang-list"
             style={{
               display: 'flex',
               gap: '24px',

@@ -4,10 +4,10 @@
   font-family: 'Feather Bold';
   src: url('https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.eot');
   src: url('https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.eot?#iefix') format('embedded-opentype'),
-       url('https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.woff2') format('woff2'),
-       url('https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.woff') format('woff'),
-       url('https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.ttf') format('truetype'),
-       url('https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.svg#Feather Bold') format('svg');
+    url('https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.woff2') format('woff2'),
+    url('https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.woff') format('woff'),
+    url('https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.ttf') format('truetype'),
+    url('https://db.onlinewebfonts.com/t/14936bb7a4b6575fd2eee80a3ab52cc2.svg#Feather Bold') format('svg');
 }
 
 :root {
@@ -42,7 +42,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Feather Bold', sans-serif;
   font-weight: normal;
   text-transform: lowercase;
@@ -61,7 +62,8 @@ button {
   outline: none;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
   display: block;
 }
@@ -107,5 +109,15 @@ img, video {
 
 .btn:active {
   box-shadow: 0 0 0 transparent;
+  transform: translateY(4px);
+}
+
+color: var(--blue);
+border: 2px solid var(--gray-200);
+box-shadow: 0 5px 0 var(--gray-200);
+}
+
+.btn-secondary:active {
+  box-shadow: 0 0 0 var(--gray-200);
   transform: translateY(4px);
 }

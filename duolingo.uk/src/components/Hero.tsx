@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
       maxWidth: '1200px',
       margin: '0 auto'
     }}>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.8, x: -50 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -29,14 +29,14 @@ const Hero: React.FC = () => {
           overflow: 'hidden'
         }}
       >
-        <VideoPlayer 
+        <VideoPlayer
           src="/hero_bg_0.mp4"
           className="w-full h-full object-contain"
         />
 
       </motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -61,8 +61,8 @@ const Hero: React.FC = () => {
           flexDirection: 'column',
           gap: '12px'
         }}>
-          <motion.a 
-            href="/register" 
+          <motion.a
+            href="/register"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98, y: 4 }}
             className="btn btn-primary"
@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
           >
             Get started
           </motion.a>
-          <motion.button 
+          <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98, y: 4 }}
             className="btn btn-secondary"
