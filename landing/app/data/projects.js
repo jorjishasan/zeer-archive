@@ -142,4 +142,14 @@ export const PROJECTS = [
     url: "https://duolingouk-zeer.netlify.app/",
     description: "A playful and engaging education landing page inspired by Duolingo's iconic design."
   },
+  {
+    id: 15,
+    slug: "3d-basketball",
+    title: "3D Basketball",
+    tag: "WebGL",
+    index: "15",
+    asset: "/landing_assets/3d BasketBall.mp4",
+    url: "https://basketball-beryl-nine.vercel.app/",
+    description: "An interactive 3D basketball website built to feel smooth and natural. The scene responds to scroll and motion, creating a simple but engaging flow from start to finish."
+  }
 ];
